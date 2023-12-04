@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "vin-vue-re"
+  },
+  "targets": {
+    "vin-vue-re": {
+      "hosting": {
+        "vinvueAdmin": [
+          "vin-vue-admin"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

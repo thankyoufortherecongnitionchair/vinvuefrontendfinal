@@ -1,0 +1,45 @@
+/* .row>div:nth-child(odd){
+background-color: black !important;
+} */
+.featured-section {
+
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-bottom: 130px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/assets/tanishavinyl1.svg');
+
+}
+
+.p {
+    color: black;
+    font-weight: medium;
+}
+
+.header {
+    color: black;
+
+    padding-top: 4px;
+    backdrop-filter: blur(5px);
+    margin-bottom: 10px;
+}
+
+
+
+
+@media only screen and (max-width:695px) {
+
+    .featured-section {
+        padding: 5px;
+    }
+
+}
+
+@media only screen and (max-width:575px) and (min-width:420px) {
+    .row {
+        margin: 10%;
+    }
+}

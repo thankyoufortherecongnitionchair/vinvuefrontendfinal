@@ -1,0 +1,18 @@
+<div class="card" *ngIf="postData" [routerLink]="['/post', postData.id]">
+  <img src="{{ postData.data.postImgPath }}" alt="post-img" class="post-img" />
+
+  <div class="tile-body">
+    <div class="labels">
+      <small class="bg-light  text-center">{{
+        postData.data.category.category
+      }}</small>
+      <small class="bg-light  text-center">recent</small>
+      <small class="bg-light  text-center">updated</small>
+    </div>
+
+    <h5 class="mt-1">{{ postData.data.title }}</h5>
+    <p class="excerpt">
+      {{ postData.data.excerpt }}
+    </p>
+  </div>
+</div>

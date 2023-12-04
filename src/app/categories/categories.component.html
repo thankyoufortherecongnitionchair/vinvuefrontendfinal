@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 whole-div">
+      <h3 class="text-center">{{ formStatus }} categories</h3>
+      <p class="text-center mb-5">{{ formStatus }} cateogires from here</p>
+
+      <form
+        class="form-inline text-center"
+        name="categories"
+        #categoryForm="ngForm"
+        (ngSubmit)="onSubmit(categoryForm)"
+      >
+        <div class="form-group col-md-10">
+          <input
+            type="text"
+            name="categories"
+            class="form-control bg-white rounded"
+            placeholder="add new categories"
+            #newCategory="ngModel"
+            [(ngModel)]="formCategory"
+            ngModel
+            required
+            [ngClass]="{
+              'is-invalid': newCategory.touched && newCategory.invalid
+            }"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="newCategory.touched && newCategory.invalid"
+          >
+            category field is compulsory!
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button
+            class="btn btn-block btn-info mb-2"
+            [disabled]="categoryForm.invalid"
+          >
+            {{ formStatus }} category!
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-md-3"></div>
+    <div class="card shadow-effect">
+      <div class="card-body">
+        <table class="table row-border hover">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>category</th>
+              <th>action performed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i = index; let category; of: categoryArray">
+              <td>{{ i }}</td>
+              <td>{{ category.data.category }}</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-warning"
+                  (click)="onEdit(category.data.category, category.id)"
+                >
+                  Edit
+                </button>
+                <button class="btn-danger ml-2" (click)="onDelete(category.id)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

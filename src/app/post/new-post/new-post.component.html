@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-container">
+      <h3 class="text-theme-primary">{{ formStatus }} Post</h3>
+      <p class="mb-5">{{ formStatus }} post here</p>
+
+      <button class="btn-danger mb-4 mr-3" disabled>
+        all fields are compulsory!
+      </button>
+      <button class="btn-danger mb-4" disabled>
+        do not click save post before filling all fields
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="postForm">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card shadow-effect">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="post-title">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="post-title"
+                  (keyup)="onTitleChanged($event)"
+                  formControlName="title"
+                />
+              </div>
+              <div class="form-group">
+                <label for="post-permalink">Permalink</label>
+                <input
+                  type="text"
+                  placeholder="permalink will appear here"
+                  name="permalink"
+                  class="form-control"
+                  id="post-permalink"
+                  [(ngModel)]="permalink"
+                  formControlName="permalink"
+                />
+              </div>
+              <div class="form-group">
+                <label for="post-excerpt">Excerpt</label>
+                <textarea
+                  class="form-control"
+                  id="post-excerpt"
+                  rows="5"
+                  formControlName="excerpt"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="card shadow-effect">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="post-category">Select Post Category</label>
+                <select
+                  class="form-control"
+                  id="post-category"
+                  formControlName="category"
+                >
+                  <option value="" disabled>seelct a category</option>
+                  <option
+                    *ngFor="let category of categories"
+                    value="{{ category.id }}-{{ category.data.category }}"
+                  >
+                    {{ category.data.category }}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="post-image">Post Image</label>
+                <img
+                  [src]="imgSrc"
+                  class="form-control img-fluid img-preview"
+                />
+
+                <input
+                  type="file"
+                  class="form-control"
+                  id="post-image"
+                  accept="image/*"
+                  formControlName="postImg"
+                  (change)="showPreview($event)"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="card shadow-effect mt-3">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="post-content">Content</label>
+                <angular-editor formControlName="content"></angular-editor>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 text-center mt-5 mb-3">
+          <button class="btn btn-info bg-theme mr-3">
+            {{ formStatus }} Post
+          </button>
+          <button class="btn btn-info bg-theme" routerLink="/post">
+            Back to Posts
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

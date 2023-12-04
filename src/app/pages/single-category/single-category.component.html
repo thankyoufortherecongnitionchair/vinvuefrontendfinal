@@ -1,0 +1,11 @@
+<div class="container1">
+  <h1>{{ categoryObj.category }}</h1>
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let post of postArray">
+      <app-tiles [postData]="post"></app-tiles>
+    </div>
+  </div>
+</div>

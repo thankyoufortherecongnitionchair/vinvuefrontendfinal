@@ -1,0 +1,11 @@
+footer {
+    height: 130px;
+    padding: 15px;
+    background-color: var(--footer-nav-color);
+
+}
+
+.nav-link {
+    color: var(--primary-color);
+    text-transform: uppercase;
+}

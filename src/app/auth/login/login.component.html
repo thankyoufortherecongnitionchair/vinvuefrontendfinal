@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card-p-5 shadow-effect">
+        <div class="card-body">
+          <div class="text-center">
+            <h3>Login</h3>
+            <p>Login to your admin account to alter posts</p>
+          </div>
+          <!-- Remove the first empty form element -->
+          <form #loginForm="ngForm">
+            <!--(ngSubmit)="onSubmit(loginForm)-->
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="email"
+                name="email"
+                ngModel
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                name="password"
+                ngModel
+                class="form-control"
+                placeholder="password"
+              />
+            </div>
+            <button
+              class="btn btn-info btn-block btn-theme"
+              (click)="onSubmit(loginForm.value)"
+            >
+              login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+<!--(click)="onSubmit(loginForm.value)"-->

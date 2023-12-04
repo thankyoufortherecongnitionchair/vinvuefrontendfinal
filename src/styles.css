@@ -1,0 +1,15 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import "~ngx-toastr/toastr"; 
+
+:root {
+    --primary-color: #7F56D9;
+    --secondary-color: #D6BBFB;
+    --body-text-color: #333;
+    --footer-nav-color: #f5f5f5;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--body-text-color);
+}

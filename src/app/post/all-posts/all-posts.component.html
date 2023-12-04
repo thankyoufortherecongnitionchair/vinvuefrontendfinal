@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-effect bg-secondary-theme">
+        <div class="card-body text-center">
+          <h3 class="text-theme-primary">All Blogs</h3>
+          <p>Manage all posts here</p>
+          <button class="btn btn-info bg-theme mr-4" routerLink="/post/newpost">
+            Add New Post
+          </button>
+          <button class="btn btn-info bg-theme" routerLink="/">
+            Back to Dashboard
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="card shadow-effect">
+        <div class="card-body">
+          <table class="table row-border-hover table-striped">
+            <thead>
+              <tr>
+                <th>S. No</th>
+                <th>post image</th>
+                <th>Title</th>
+                <th>Excerpt</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let postItem of postArray; let index = index">
+                <td width="10">{{ index + 1 }}</td>
+                <td width="200">
+                  <img
+                    src="{{ postItem.data.postImgPath }}"
+                    class="img img-fluid"
+                    alt="image of post"
+                  />
+                </td>
+                <td width="200">{{ postItem.data.title }}</td>
+                <td width="300">{{ postItem.data.excerpt }}</td>
+                <td>{{ postItem.data.category.category }}</td>
+                <td>{{ postItem.data.createdAt.toMillis() | date }}</td>
+
+                <td>
+                  <button
+                    class="btn-warning ml-2"
+                    routerLink="/post/newpost"
+                    [queryParams]="{ id: postItem.id }"
+                  >
+                    EDIT
+                  </button>
+                  <button
+                    class="btn-danger ml-2"
+                    (click)="onDelete(postItem.data.postImgPath, postItem.id)"
+                  >
+                    !DELETE!
+                  </button>
+
+                  <button
+                    *ngIf="!postItem.data.isFeatured"
+                    class="btn-success ml-2"
+                    (click)="onFeatured(postItem.id, true)"
+                  >
+                    mark as featured
+                  </button>
+                  <button
+                    *ngIf="postItem.data.isFeatured"
+                    class="btn-info ml-2"
+                    (click)="onFeatured(postItem.id, false)"
+                  >
+                    remove from featured
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

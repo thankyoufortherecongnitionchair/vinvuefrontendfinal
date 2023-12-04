@@ -1,0 +1,39 @@
+<section class="featured-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 text-center mt-5 header">
+        <h2 class="header" id="featured">Featured Posts</h2>
+        <p class="p">
+          Take a look at reviews handpicked by me, updated every week!
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center custom-centered-row">
+      <div
+        class="col-lg-4 col-sm-6 col-md-6"
+        *ngFor="let featuredpost of featuredArray"
+      >
+        <app-tiles [postData]="featuredpost"></app-tiles>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5" id="latest">
+  <div class="col-md-12">
+    <h2>Latest Reviews</h2>
+    <p>You can find all my latest or upcoming reviews herein.</p>
+  </div>
+  <hr />
+
+  <div class="row justify-content-center">
+    <div
+      class="col-lg-4 col-sm-6 col-md-6 mx-auto"
+      *ngFor="let latestPost of latestPostArray"
+    >
+      <app-tiles [postData]="latestPost"></app-tiles>
+    </div>
+  </div>
+  <hr />
+</section>

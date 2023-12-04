@@ -1,0 +1,19 @@
+.form-control {
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+input {
+    height: 45px;
+}
+
+.whole-div {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+button {
+    padding: 5px;
+}

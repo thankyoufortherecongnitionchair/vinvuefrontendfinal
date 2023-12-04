@@ -1,0 +1,18 @@
+<div>
+  <h2>Comments</h2>
+  <ul>
+    <li *ngFor="let comment of comments">
+      {{ comment.text }}
+    </li>
+  </ul>
+  <!-- Create a form to submit new comments -->
+  <form (submit)="addComment()">
+    <input
+      type="text"
+      [(ngModel)]="newCommentText"
+      name="newCommentText"
+      required
+    />
+    <button type="submit">Add Comment</button>
+  </form>
+</div>

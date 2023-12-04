@@ -1,0 +1,13 @@
+header {
+    height: 100px;
+}
+
+.site-logo {
+    padding: 10px;
+    border-radius: 24px;
+    background-color: var(--primary-color);
+}
+
+a {
+    color: var(--secondary-color);
+}

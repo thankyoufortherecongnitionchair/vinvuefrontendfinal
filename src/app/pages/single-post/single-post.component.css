@@ -1,0 +1,39 @@
+small {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn {
+    margin-left: 16px;
+    margin-top: 5px;
+    background: #03A9F4 !important;
+}
+
+.container {
+    padding: 30px;
+
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/assets/tanishavinyl1.svg');
+    margin-top: 30px;
+}
+
+/* @media only screen and(max-width:750px) {
+    .container {
+        margin-top: 800px;
+    }
+} */
+/* Define styles for screens with a max-width of 750px or less */
+@media only screen and (max-width: 750px) {
+    .container {
+        margin-top: 30px;
+        padding: 5px;
+        overflow-x: hidden;
+        text-align: justify
+            /* Adjust this value as needed */
+    }
+}
