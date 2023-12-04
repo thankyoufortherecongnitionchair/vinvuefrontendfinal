@@ -1,9 +1,11 @@
 This Repo contains the backend implementation of my reviews hosting website. Implemented mainly using Angular for the Front-end (Dashboard view), and TypeScript used to handle all of the transaction logic (CRUD operations) and real-time user authentication and content validation. 
 
-Follow the instructions given below to implement this on your own systems. Built using Angular 16 and TypeScript.
+Follow the instructions given below to implement this on your personal systems. Built using Angular 16 and TypeScript.
+the site is currently live at 
+https://vin-vue-re.web.app/
 
 
-# VinVueDashboard
+# VinVueFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
